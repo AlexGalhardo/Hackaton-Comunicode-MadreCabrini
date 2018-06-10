@@ -217,7 +217,7 @@
 
 
               Valor da sua Doação:<br>
-              R$<input type="number" id="valorDoacao" name="valorDoação">
+              R$<input type="number" id="valorDoacao" name="valorDoação" placeholder="00.00 - Não esquecer Ponto">
               <br>
 
               <!-- SELECIONAR CARTÃO -->
@@ -392,7 +392,7 @@
 
         // var link = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=99&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo";
 
-          ajax.open("GET", "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=99&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo", true);
+          ajax.open("GET", "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=424242&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=99.00&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo", true);
           ajax.send();
       }
 
