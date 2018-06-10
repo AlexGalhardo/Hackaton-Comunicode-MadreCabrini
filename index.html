@@ -83,7 +83,10 @@
                 <!-- Botão Nossos Apoiadores -->
                 <!-- LEVA PARA UMA PÁGINA COM TODOS OS APOIADORES DO PROJETO -->
                 <!-- NA PÁGINA APOIADORES, MOSTRA A TRANSPARÊNCIA DO USO DO DINHEIRO TAMBÉM -->
-                <button class="btn btn-light" type="button" onclick="alert('Em desenvolvimento')" title="Conheça alguns de nossos apoiadores :D"><a href="#">Nossos Apoiadores</a></button>
+                <div class="popup" onclick="myPopUpVoluntario()">
+                  <button class="btn btn-light" type="button" title="Conheça alguns de nossos apoiadores :D"><a href="#">Seja um Voluntário</a></button>
+                  <span class="popuptext" id="myPopup">Aceitamos ajuda voluntaria na instituição, <br>além de tambem aceitar doações de comidas, roupas usadas e materiais de higine pessoal.</span>
+                </div>
 
                 <!-- Butão Faça uma Doação -->
                 <button class="btn btn-primary" type="button" onclick="document.getElementById('id01').style.display='block'" title="Que tal ajudar uma criança hoje? :D"><a id="doacao" style="width:auto;">Faça uma doação</a></button>
@@ -317,6 +320,11 @@
           theEvent.returnValue = false;
           if(theEvent.preventDefault) theEvent.preventDefault();
         }
+      }
+
+      function myPopUpVoluntario() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
       }
 
       function fazerDoacaoCartaoDeCredito(){
