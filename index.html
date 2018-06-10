@@ -44,6 +44,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/coming-soon.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     
     <style>
   
@@ -78,7 +79,7 @@
 
                 <a href="www.google.com"><button class="btn btn-light" type="button"><a href="https://www.google.com/">Nossos Apoiadores</a></button>
 
-                <button class="btn btn-primary" type="button"><a id="doacao" href="https://www.google.com/">Faça uma doação</a></button>
+                <button class="btn btn-primary" type="button" onclick="document.getElementById('id01').style.display='block'"><a id="doacao" style="width:auto;">Faça uma doação</a></button>
 
               </div>
             </div>
@@ -107,6 +108,158 @@
         </li>
       </ul>
     </div>
+
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" action="/action_page.php">
+        <div class="container" style="align-content: center;">
+          <h1 style="text-align: center;">Paypal</h1>
+          <div class="container-paypal-1">
+          <h4>Aleatorio</h4>
+          <!-- BOTÃO DOAÇÃO ALEATÓRIA -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                                                         ">
+            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          </div>
+            
+          
+          <div class="container-paypal-2">
+          <h4>R$20,00</h4>
+          <!-- BOTÃO DOAÇÃO R$ 20,00 REAIS -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="aleexgvieira@gmail.com">
+            <input type="hidden" name="lc" value="BR">
+            <input type="hidden" name="item_name" value="Projeto Madre Cabrini">
+            <input type="hidden" name="amount" value="20.00">
+            <input type="hidden" name="currency_code" value="BRL">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          </div>
+          
+          <div class="container-paypal-3">
+            <h4>R$50,00</h4>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+          </div>
+
+          <hr>  
+          
+          <h1 style="text-align: center;">Cartão de crédito</h1>
+          <form>
+            <!-- FORMS DE DOAÇÃO -->
+            <form onSubmit="return ( verifica() )" name="enviarDados">
+
+              Nome Completo:<br>
+              <input id="nomeDoador" type="text" name="nome" placeholder="Nome Completo">
+
+
+              Seu CPF:<br>
+              <input type="text" id="CPF" name="cpf" placeholder="Seu CPF" onkeypress='validate(event)' maxlength="11">
+
+
+              Seu Email:<br>
+              <input type="text" id="email" name="email" placeholder="Seu Email" onblur="checarEmail();">
+
+
+              Valor da sua Doação:<br>
+              R$<input type="number" id="valorDoacao" name="valorDoação">
+              <br>
+
+              <!-- SELECIONAR CARTÃO -->
+              <br>
+              Escolha seu Cartão de Crédito:<br>
+              <select id="bandeiraCartaoDeCredito">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+              </select>
+
+              <br>
+              <br>
+              Nome no Cartão de Crédito:<br>
+              <input type="text" id="nomeCartaoDeCredito" name="nomeCartaoDeCredito" placeholder="Nome no Cartão de Crédito">
+
+
+              Numero cartão de cŕedito:<br>
+              <input type="text" id="numeroCartaoDeCredito" name="numeroCartaoDeCredito" onkeypress='validate(event)' placeholder="Numero do Cartão de Crédito" maxlength="16">
+
+
+              Código de Segurança:<br>
+              <input type="text" id="codigoDeSeguranca" name="codigoSegurança" placeholder="Cod. Segurança" onkeypress='validate(event)' maxlength="3">
+
+
+
+              Mes de Validade:<br>
+              <input type="text" id="mes" name="codigoSegurança" placeholder="Mes Validade" onkeypress='validate(event)' maxlength="2" style="width: 30%;">
+
+              <br>
+
+              Ano de Validade:<br>
+              <input type="text" id="ano" name="codigoSegurança" placeholder="Ano Validade" onkeypress='validate(event)' maxlength="4" style="width: 30%;">
+            </form>
+
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+              <button type="submit" class="signupbtn">Confirmar</button>
+            </div>
+            </div>
+          </form>
+        </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        
+        function verifica() {
+          if (document.forms[0].email.value.length == 0) {
+            alert('Por favor, informe o seu EMAIL.');
+            document.frmEnvia.email.focus();
+            return false;
+          }
+          return true;
+        }
+
+        function checarEmail(){
+          if( document.forms[0].email.value=="" 
+             || document.forms[0].email.value.indexOf('@')==-1 
+             || document.forms[0].email.value.indexOf('.')==-1 )
+          {
+            alert( "Por favor, informe um E-MAIL válido!" );
+            return false;
+          }
+        }
+
+        function validate(evt) {
+          var theEvent = evt || window.event;
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode( key );
+          var regex = /[0-9]|\./;
+          if( !regex.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+          }
+        }
+      </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
