@@ -335,9 +335,7 @@
         venda.consumidor.nome=Alex%20Galhardo
         */
 
-        // auto
-        // &venda.idVendaEmpresa=999999
-        var linkURL = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&";
+        var linkURL = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=TESTEVENDA&";
 
         const emailDoador = document.getElementById("email").value;
         linkURL += emailDoador.replace(/\s/g, "") + "&";
