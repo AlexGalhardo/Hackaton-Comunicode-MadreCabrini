@@ -39,7 +39,7 @@ function validate(evt) {
   }
 }
 
-function submeter(){
+function fazerDoacaoCartaoDeCredito(){
 
 
   /*
