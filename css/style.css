@@ -63,6 +63,10 @@ button:hover {
   padding-top: 50px;
 }
 
+#doacao {
+  color: white;
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
