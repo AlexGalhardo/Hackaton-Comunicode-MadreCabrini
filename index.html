@@ -206,25 +206,30 @@
             <!-- FORMS DE DOAÇÃO -->
             <form onSubmit="return ( verifica() )" name="enviarDados">
 
-              Nome Completo:<br>
+              <h5>Nome Completo:</h5>
+              <br>
               <input id="nomeDoador" type="text" name="nome" placeholder="Nome Completo">
 
 
-              Seu CPF:<br>
+              <h5>Seu CPF:</h5>
+              <br>
               <input type="text" id="CPF" name="cpf" placeholder="Seu CPF" onkeypress='validate(event)' maxlength="11">
 
 
-              Seu Email:<br>
+              <h5>Seu Email:</h5>
+              <br>
               <input type="text" id="email" name="email" placeholder="Seu Email" onblur="checarEmail();">
 
 
-              Valor da sua Doação:<br>
+              <h5>Valor da sua Doação:</h5><br>
               R$<input type="number" id="valorDoacao" name="valorDoação" placeholder="00.00">
               <br>
-
-              <!-- SELECIONAR CARTÃO -->
               <br>
-              Escolha seu Cartão de Crédito:<br>
+              
+              <br>
+              <!-- SELECIONAR CARTÃO -->
+              <h5>Escolha seu Cartão de Crédito:</h5>
+              <br>
               <select id="bandeiraCartaoDeCredito">
                 <option value="Visa">Visa</option>
                 <option value="MasterCard">MasterCard</option>
@@ -232,25 +237,25 @@
 
               <br>
               <br>
-              Nome no Cartão de Crédito:<br>
+              <h5>Nome no Cartão de Crédito:</h5><br>
               <input type="text" id="nomeCartaoDeCredito" placeholder="Nome no Cartão de Crédito">
 
 
-              Numero cartão de cŕedito:<br>
+              <h5>Numero cartão de cŕedito:</h5><br>
               <input type="text" id="numeroCartaoDeCredito" onkeypress='validate(event)' placeholder="Numero do Cartão de Crédito" maxlength="16">
 
 
-              Código de Segurança:<br>
+              <h5>Código de Segurança:</h5><br>
               <input type="text" id="codigoDeSeguranca" name="codigoSegurança" placeholder="Cod. Segurança" onkeypress='validate(event)' maxlength="3">
 
 
 
-              Mes de Validade:<br>
+              <h5>Mes de Validade:</h5><br>
               <input type="text" id="mes" name="mes" placeholder="Mes Validade" onkeypress='validate(event)' maxlength="2" style="width: 30%;">
 
               <br>
 
-              Ano de Validade:<br>
+              <h5>Ano de Validade:</h5><br>
               <input type="text" id="ano" name="ano" placeholder="Ano Validade" onkeypress='validate(event)' maxlength="4" style="width: 30%;">
             </form>
 
