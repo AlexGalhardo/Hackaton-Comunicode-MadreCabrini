@@ -1,8 +1,8 @@
 {
-    "title": "Coming Soon",
-    "name": "startbootstrap-coming-soon",
+    "title": "Comunicode Madre Cabrini",
+    "name": "Hackathon Madre Cabrini",
     "version": "4.1.1",
-    "description": "Coming Soon is a Bootstrap 4 coming soon page theme.",
+    "description": "Projeto desenvolvido durante o Hackathon ComuniCode 2018, realizado pela http://monitoratec.com.br/ para o projeto social Madre Cabrini.",
     "keywords": [
         "css",
         "sass",
@@ -11,19 +11,19 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/coming-soon",
+    "homepage": "http://projetomadrecabrini.org.br/",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-coming-soon/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https://github.com/AlexGalhardo/Hackathon-ComuniCode-Madre-Cabrini.git",
+        "email": "aleexgvieira@gmail.com"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
+    "authors": "Grupo 4 - Alex Galhardo, Thiago Toledo e Marcos Paone",
     "contributors": [
-        "David Miller (http://davidmiller.io/)"
+        "http://monitoratec.com.br/"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-coming-soon.git"
+        "url": "https://github.com/AlexGalhardo/Hackathon-ComuniCode-Madre-Cabrini.git"
     },
     "dependencies": {
         "bootstrap": "4.1.1",
