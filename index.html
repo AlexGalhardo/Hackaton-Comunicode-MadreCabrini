@@ -231,11 +231,11 @@
               <br>
               <br>
               Nome no Cartão de Crédito:<br>
-              <input type="text" id="nomeCartaoDeCredito" name="nomeCartaoDeCredito" placeholder="Nome no Cartão de Crédito">
+              <input type="text" id="nomeCartaoDeCredito" placeholder="Nome no Cartão de Crédito">
 
 
               Numero cartão de cŕedito:<br>
-              <input type="text" id="numeroCartaoDeCredito" name="numeroCartaoDeCredito" onkeypress='validate(event)' placeholder="Numero do Cartão de Crédito" maxlength="16">
+              <input type="text" id="numeroCartaoDeCredito" onkeypress='validate(event)' placeholder="Numero do Cartão de Crédito" maxlength="16">
 
 
               Código de Segurança:<br>
@@ -244,12 +244,12 @@
 
 
               Mes de Validade:<br>
-              <input type="text" id="mes" name="codigoSegurança" placeholder="Mes Validade" onkeypress='validate(event)' maxlength="2" style="width: 30%;">
+              <input type="text" id="mes" name="mes" placeholder="Mes Validade" onkeypress='validate(event)' maxlength="2" style="width: 30%;">
 
               <br>
 
               Ano de Validade:<br>
-              <input type="text" id="ano" name="codigoSegurança" placeholder="Ano Validade" onkeypress='validate(event)' maxlength="4" style="width: 30%;">
+              <input type="text" id="ano" name="ano" placeholder="Ano Validade" onkeypress='validate(event)' maxlength="4" style="width: 30%;">
             </form>
 
             <div class="clearfix">
@@ -314,7 +314,6 @@
 
       function fazerDoacaoCartaoDeCredito(){
 
-
         /*
         restApi=true & 
         empresa.hashEmpresa=gmxCheckoutGtwy & 
@@ -335,51 +334,51 @@
         venda.consumidor.nome=Alex%20Galhardo
         */
 
-        var linkURL = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=TESTEVENDA&";
+        var linkURL = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=MadreCabrini&";
 
         const emailDoador = document.getElementById("email").value;
-        linkURL += emailDoador.replace(/\s/g, "") + "&";
+        linkURL += "venda.consumidor.email=" + emailDoador.replace(/\s/g, "") + "&";
+        // console.log(linkURL);
 
-        const telefoneDoador = "(16)981660321";
-        linkURL += telefoneDoador.replace(/\s/g, "") + "&";
+        linkURL += "venda.consumidor.telefone1=(16)981660321&";
+        // console.log(linkURL);
 
         const valorDoacao = document.getElementById("valorDoacao").value;
-        linkURL += valorDoacao + "&";
+        linkURL += "venda.valor=" + valorDoacao + "&";
+        // console.log(linkURL);
 
         const nomeCartaoDeCredito = document.getElementById("nomeCartaoDeCredito").value;
-        linkURL += nomeCartaoDeCredito.replace(/\s/g, "") + "&";
+        linkURL += "cartaoCredito.portador=" + nomeCartaoDeCredito.replace(/\s/g, "") + "&";
+        // console.log(linkURL);
 
         const CPFDoador = document.getElementById("CPF").value;
-        linkURL += CPFDoador.replace(/\s/g, "") + "&";
+        linkURL += "venda.consumidor.cpf=" + CPFDoador.replace(/\s/g, "") + "&";
+        // console.log(linkURL);
 
-        const numeroCartaoDeCredito = document.getElementById("nomeCartaoDeCredito").value;
-        linkURL += numeroCartaoDeCredito.replace(/\s/g, "") + "&";
+        const numeroCartaoDeCredito = document.getElementById("numeroCartaoDeCredito").value;
+        linkURL += "cartaoCredito.numero=" + numeroCartaoDeCredito.replace(/\s/g, "") + "&";
 
         const mes = document.getElementById("mes").value;
-        linkURL += mes + "&";
+        linkURL += "cartaoCredito.mesValidade=" + mes + "&";
 
-        const ano = document.getElementById("ano");
-        linkURL += ano + "&";
+        const ano = document.getElementById("ano").value;
+        linkURL += "cartaoCredito.anoValidade=" + ano + "&";
 
         const codigoSegurança = document.getElementById("codigoDeSeguranca").value;
-        linkURL += codigoSegurança + "&";
+        linkURL += "cartaoCredito.codSeguranca=" + codigoSegurança + "&";
 
-        const bandeiraCartaoDeCredito = document.getElementById("bandeiraCartaoDeCredito").value;
-        linkURL += bandeiraCartaoDeCredito + "&";
+        //const bandeiraCartaoDeCredito = document.getElementById("bandeiraCartaoDeCredito").value;
+        linkURL += "cartaoCredito.bandeira=visa&";
 
-        linkURL += 1 + "&";
+        linkURL += "venda.modalidadeVenda=1&";
 
         var nomeDoador = document.getElementById("nomeDoador").value;
-        // console.log(nomeDoador);
-        linkURL += nomeDoador.replace(/\s/g, "");
+        linkURL += "venda.consumidor.nome=" + nomeDoador.replace(/\s/g, "");
 
 
-        // verifique link do get request
-        // console.log(linkURL);
 
         // Exemplo de requisição GET
         var ajax = new XMLHttpRequest();
-
         // Cria um evento para receber o retorno.
         ajax.onreadystatechange = function() {
           // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
@@ -390,10 +389,19 @@
           }
         }
 
-        // var link = "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=999999&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=99&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo";
 
-          ajax.open("GET", "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=424242&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=9900&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo", true);
-          ajax.send();
+
+        /* 
+        REQUISIÇÃO QUE FUNCIONA
+
+        ajax.open("GET", "https://www.gmxcheckout.com.br/txn/post?restApi=true&empresa.hashEmpresa=gmxCheckoutGtwy&venda.idVendaEmpresa=424242&venda.capturaAuto=true&venda.descricaoFatura=Vendendo&venda.consumidor.email=aleexgvieira@gmail.com&venda.consumidor.telefone1=(16)981660321&venda.valor=9900&cartaoCredito.portador=Alex%20Galhardo&venda.consumidor.cpf=45672888828&cartaoCredito.numero=5401056100548984&cartaoCredito.mesValidade=05&cartaoCredito.anoValidade=2020&cartaoCredito.codSeguranca=153&cartaoCredito.bandeira=visa&venda.modalidadeVenda=1&venda.consumidor.nome=Alex%20Galhardo", true);
+        ajax.send();
+
+        */
+
+        // requisição de acordo com os dados do formulário
+        ajax.open("GET", linkURL, true);
+        ajax.send();
       }
 
       /*
@@ -414,9 +422,6 @@
           -d "cartaoCredito.codSeguranca=123" \
           -d "cartaoCredito.bandeira=visa"
       */
-
-
-
 
     </script>
 
