@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://secure.php.net/">
+  <a href="https://comunicode-madre-cabrini.galhardoo.com">
     <img src="comunicode.svg" alt="Comunicode Logo" width=256 height=144>
   </a>
 
@@ -9,7 +9,3 @@
   </p>
 
 
-<br>
-<br>
-
-## http://galhardo-comunicode.netlify.com/
